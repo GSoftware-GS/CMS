@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Editar Entrada</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container mt-5">
+    <h1 class="mb-4">Editar Entrada</h1>
+    <form method="POST" action="{{ url_for('edit', word_id=word.id) }}">
+      <div class="form-group">
+        <label for="word_phrase">Palabra/Frase:</label>
+        <input type="text" class="form-control" id="word_phrase" name="word_phrase" value="{{ word.word_phrase }}">
+      </div>
+      <div class="form-group">
+        <label for="translation">Traducción:</label>
+        <input type="text" class="form-control" id="translation" name="translation" value="{{ word.translation }}">
+      </div>
+      <div class="form-group">
+        <label for="example_sentence">Ejemplo:</label>
+        <textarea class="form-control" id="example_sentence" name="example_sentence" rows="4">{{ word.example_sentence }}</textarea>
+      </div>
+      <button type="submit" class="btn btn-success">Guardar</button>
+      <a href="{{ url_for('index') }}" class="btn btn-secondary">Volver a la Lista</a>
+    </form>
+  </div>
+
+  <!-- Bootstrap JS y dependencias -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
